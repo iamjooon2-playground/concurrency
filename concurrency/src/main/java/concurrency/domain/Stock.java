@@ -24,11 +24,11 @@ public class Stock {
         this.quantity = quantity;
     }
 
-    public void decrease(Long quantity) {
-        if (this.quantity - quantity < 0) {
+    public void decrease() {
+        if (this.quantity < 0) {
             throw new IllegalArgumentException("재고는 0개 미만이 될 수 없습니다.");
         }
-        this.quantity = this.quantity - quantity;
+        this.quantity -= 1;
     }
 
     public Long getId() {
