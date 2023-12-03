@@ -14,5 +14,15 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: p@ssword
       TZ: Asia/Seoul
+  redis:
+    image: redis:alpine
+    command: redis-server --port 6379
+    container_name: redis_boot
+    hostname: redis_boot
+    labels:
+      - "name=redis"
+      - "mode=standalone"
+    ports:
+      - 6379:6379
 
 # docker compose --build -up
